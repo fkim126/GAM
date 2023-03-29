@@ -40,8 +40,31 @@ If you go to the [GitHub Release Page](https://github.com/GAM-team/GAM/releases)
 ![image](https://user-images.githubusercontent.com/73561003/228606077-96079337-27ab-4230-8024-9bfee595af9d.png)
 ![image](https://user-images.githubusercontent.com/73561003/228607678-e534487b-4f30-4256-bd0e-309730317a3a.png)
 
-7. GAM will prompt you to enter the email address of a REGULAR user. Enter a regular user from your Google Workspace. On the first initial try, GAM will state that some of the scopes have failed. We will need to go to the link provided and authorize the scopes. **YOU MUST BE A SUPER ADMIN TO ACCESS THIS PAGE.** Select ```AUTHORIZE```, wait a few minutes for the system to sync and go back to command prompt. Once you are there, select ```y``` to authroize GAM to manage user data/settings and enter the email address of the regular Google Workspace user again. All these scopes should pass and once they all pass, you are all done with the setup.
+7. GAM will prompt you to enter the email address of a REGULAR user. Enter a regular user from your Google Workspace. On the first initial try, GAM will state that some of the scopes have failed. We will need to go to the link provided and authorize the scopes. **YOU MUST BE A SUPER ADMIN TO ACCESS THIS PAGE.** Select ```AUTHORIZE```, wait a few minutes for the system to sync and go back to command prompt. Once you are there, select ```y``` to authroize GAM to manage user data/settings and enter the email address of the regular Google Workspace user again. All these scopes should pass and once they all pass, you are all done with the setup!
 ![image](https://user-images.githubusercontent.com/73561003/228608194-616ac19e-6324-4e39-a2ba-037d283a4604.png)
 ![image](https://user-images.githubusercontent.com/73561003/228608448-4dbf7153-b7ae-43d7-b413-2ae38ce7bd68.png)
 ![image](https://user-images.githubusercontent.com/73561003/228608971-c5bf5032-c77d-40ff-9931-1c371b5a7b36.png)
 ![image](https://user-images.githubusercontent.com/73561003/228609478-a90f6ad6-cac0-4464-8fb0-a37bd13b7d21.png)
+
+# Deprovisioning Chromebooks in Bulk
+In this phase of the tutorial, I'll show you how to collect your Chromebook data and filter them so we have a final list of Chromebooks that needs to be deprovisioned.
+
+1. We want to first login to out Google Admin Console and go to the Devices tab -> Chrome -> Devices. Once we are on this page, we want to export all the provisioned devices. After downloading the exported CSV filled with provisioned Chromebooks, we then want to filter from the list what Chromebooks need to be deprovisioned (keep the as the original). Create a new CSV file called devices.csv, containing the filtered list of Chromebooks that need to be deprovisioned.
+![image](https://user-images.githubusercontent.com/73561003/228612684-0f1cc8dd-288a-4f3c-8de2-058571614a6f.png)
+
+2. Once we have the devices.csv file ready, we want to open a new command prompt and change directory to where the devices.csv file is located. For the final step, here is the GAM command to deprovision Chromebooks in the devices.csv by ```deviceId```: 
+
+    ```gam csv devices.csv gam update cros ~deviceId action deprovision_retiring_device acknowledge_device_touch_requirement```
+    
+3. Once you have entered this code in your command prompt you can sit back and watch the magic unfold. **Note that when using GAM, you're making API requests/calls. This can be an issue if you are trying to automate a task that requires thousands of API requests. If this is the case, some of the API calls WILL FAIL. You will have to double check whether number of Chromebooks deprovisioned align with the number of Chromebooks in your devices.csv. If some of the devices are not provisioned, filter the list one more time and run the GAM command again.**
+![image](https://user-images.githubusercontent.com/73561003/228615923-0da2fe26-b7c6-426e-8743-7436a4aea6a2.png)
+
+## Useful Links for GAM Commands:
+[GAMADV-XTD3](https://sites.google.com/jis.edu.bn/gam-commands/hardware/chromeos?authuser=0)
+<br/>
+[4 Chromebook Management Tools](https://gatlabs.com/education/blog/5-chromebook-management-tools-admins/)
+
+## Useful Links for GAM Installation:
+[YouTube Tutorial by The Cloud Nerd](https://www.youtube.com/watch?v=RJ5E56GIcdI)
+<br/>
+[GAM GitHub Page](https://github.com/GAM-team/GAM/wiki)
