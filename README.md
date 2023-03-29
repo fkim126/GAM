@@ -56,7 +56,7 @@ In this phase of the tutorial, I'll show you how to collect your Chromebook data
 
     ```gam csv devices.csv gam update cros ~deviceId action deprovision_retiring_device acknowledge_device_touch_requirement```
     
-3. Once you have entered this code in your command prompt you can sit back and watch the magic unfold. **Note that when using GAM, you're making API requests/calls. This can be an issue if you are trying to automate a task that requires thousands of API requests. If this is the case, some of the API calls WILL FAIL. You will have to double check whether number of Chromebooks deprovisioned align with the number of Chromebooks in your devices.csv. If some of the devices are not provisioned, filter the list one more time and run the GAM command again.**
+3. Once you have entered this code in your command prompt you can sit back and watch the magic unfold. **Note that when using GAM, you're making API requests/calls. This can be an issue if you are trying to automate a task that requires thousands of API requests. If this is the case, some of the API calls WILL FAIL. You will have to double check whether number of Chromebooks deprovisioned align with the number of Chromebooks in your devices.csv. If some of the devices are not deprovisioned, filter the list one more time and run the GAM command again.**
 ![image](https://user-images.githubusercontent.com/73561003/228615923-0da2fe26-b7c6-426e-8743-7436a4aea6a2.png)
 
 ## Useful Links for GAM Commands:
