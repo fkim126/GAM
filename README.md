@@ -49,7 +49,7 @@ If you go to the [GitHub Release Page](https://github.com/GAM-team/GAM/releases)
 # Deprovisioning Chromebooks in Bulk
 In this phase of the tutorial, I'll show you how to collect your Chromebook data and filter them so we have a final list of Chromebooks that needs to be deprovisioned.
 
-1. We want to first login to our Google Admin Console and go to the Devices tab -> Chrome -> Devices. Once we are on this page, we want to export all the provisioned devices. After downloading the exported CSV filled with provisioned Chromebooks, we then want to filter from the list what Chromebooks need to be deprovisioned (keep the as the original). Create a new CSV file called devices.csv, containing the filtered list of Chromebooks that need to be deprovisioned.
+1. We want to first login to our Google Admin Console and go to the Devices tab -> Chrome -> Devices. Once we are on this page, we want to export all the provisioned devices. After downloading the exported CSV filled with provisioned Chromebooks, we then want to filter from the list what Chromebooks need to be deprovisioned (keep the headers as the original). Create a new CSV file called devices.csv, containing the filtered list of Chromebooks that need to be deprovisioned.
 ![image](https://user-images.githubusercontent.com/73561003/228612684-0f1cc8dd-288a-4f3c-8de2-058571614a6f.png)
 
 2. Once we have the devices.csv file ready, we want to open a new command prompt and change directory to where the devices.csv file is located. For the final step, here is the GAM command to deprovision Chromebooks in the devices.csv by ```deviceId```: 
